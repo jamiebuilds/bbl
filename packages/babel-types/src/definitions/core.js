@@ -720,3 +720,16 @@ defineType("WithStatement", {
     }
   }
 });
+
+defineType("ExperimentalModuleDeclaration", {
+  visitor: ["id", "body"],
+  aliases: [],
+  fields: {
+    id: {
+      validate: assertNodeType("Identifier")
+    },
+    body: {
+      validate: assertNodeType("BlockStatement")
+    }
+  }
+});
